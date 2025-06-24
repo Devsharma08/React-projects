@@ -1,0 +1,62 @@
+.section-post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-post h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.section-post ol {
+  list-style: none;
+  padding: 0;
+}
+
+.section-post div {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.section-post div:hover {
+  transform: scale(1.01);
+}
+
+.section-post p {
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.section-post button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.section-post button:hover {
+  opacity: 0.9;
+}
+
+.section-post button:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
