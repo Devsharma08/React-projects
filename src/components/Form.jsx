@@ -24,7 +24,7 @@ export const Form = ({ data, setData }) => {
       }
     } catch (err) {
       setError("❌ Posting error: " + err.message);
-      console.error(err);
+      console.error(err.message);
     }
   };
 
