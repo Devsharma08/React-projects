@@ -23,6 +23,8 @@ export const Form = ({ data, setData }) => {
         setError("Failed to post data.");
       }
     } catch (err) {
+      setError("❌ Posting error: " + err.message);
+
       console.error(err);
     }
   };
