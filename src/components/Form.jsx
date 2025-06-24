@@ -14,7 +14,7 @@ export const Form = ({ data, setData }) => {
     try {
       const res = await postService(newData);
       console.log(res);
-                                                                                                                    
+
       if (res.status === 201 || res.status === 200) {
         setData([...data, res.data]);
         setNewData({ title: "", body: "" });
@@ -23,7 +23,6 @@ export const Form = ({ data, setData }) => {
         setError("Failed to post data.");
       }
     } catch (err) {
-      setError("❌ Posting error: " + err.message);
       console.error(err);
     }
   };
