@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react';
 import { getService } from '../services/getService';
 import { DeleteService } from '../services/deleteService';
 import '../App.css';
+import {Form} from './Form'
 
 function Posts() {
   const [data,setData] = useState([]);
@@ -39,8 +40,10 @@ function Posts() {
   
   return (
     <>
+    <section className='herader'>
+      <Form data={data} setData={setData} />
+    </section>
     <section className='section-post'>
-      <h1>axios code</h1>
       <ol>
       {data.map((curr,i)=>{
         const {body,title,id} = curr
