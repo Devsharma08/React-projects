@@ -6,6 +6,7 @@ import {Form} from './Form'
 
 function Posts() {
   const [data,setData] = useState([]);
+  const [updatePost,setUpdatePost] = useState([]) 
   
   const getPost = async() => {
     try{
@@ -20,6 +21,8 @@ function Posts() {
 
   const deletePost = async (id) => {
     try{
+      console.log(id);
+      
     await DeleteService(id);
     console.log(`deleted: ${id}`);
     
@@ -34,14 +37,24 @@ function Posts() {
     }
   }
 
+  const handleUpdate = (curr) =>{
+    console.log(curr)
+    
+    setUpdatePost( curr )
+  }
+
   useEffect(()=>{
     getPost();
   },[])
   
   return (
     <>
-    <section className='herader'>
-      <Form data={data} setData={setData} />
+    <section className='header'>
+      <Form 
+      data={data} 
+      setData={setData}
+      updatePost={updatePost}
+      setUpdatePost={setUpdatePost}/>
     </section>
     <section className='section-post'>
       <ol>
@@ -52,7 +65,11 @@ function Posts() {
           <p>{title}</p>
           <p>{body}</p>
           <div>
-            <button type='submit'>edit</button>
+            <button 
+            type='submit'
+            onClick={() => handleUpdate(curr)}
+            >edit</button>
+
             <button type='submit' className='btn-delete' 
             onClick={() => deletePost(id)}>delete</button>
           </div>
