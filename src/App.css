@@ -1,58 +1,85 @@
-.section-post {
-  max-width: 800px;
+/* General container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin: 2rem auto;
-  padding: 1.5rem;
-  background: #f9f9f9;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: #f4f4f4;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.section-post h1 {
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 2rem;
+/* Input fields */
+.form-container input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Submit button */
+.form-container button {
+  background-color: #3498db;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #2c80b4;
+}
+
+/* Grid layout for posts */
+.section-post {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
 .section-post ol {
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   padding: 0;
+  list-style: none;
 }
 
-.section-post div {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+/* Individual post card */
+.section-post ol > div {
+  background-color: #fff;
   padding: 1rem;
-  margin-bottom: 1rem;
-  transition: transform 0.2s ease;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
-.section-post div:hover {
-  transform: scale(1.01);
+.section-post ol > div:hover {
+  transform: translateY(-4px);
 }
 
+/* Text styling */
 .section-post p {
-  margin: 0.3rem 0;
-  color: #333;
+  margin: 0.4rem 0;
+  color: #444;
 }
 
+/* Buttons inside cards */
 .section-post button {
-  margin-right: 1rem;
-  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 5px;
   font-size: 0.9rem;
-}
-
-.section-post button:hover {
-  opacity: 0.9;
+  cursor: pointer;
 }
 
 .section-post button:first-child {
-  background-color: #3498db;
+  background-color: #2ecc71;
   color: white;
 }
 
@@ -61,28 +88,6 @@
   color: white;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin: 2rem auto;
-  max-width: 400px;
-  padding: 1rem;
-  background: #f3f3f3;
-  border-radius: 10px;
-}
-
-.form-container input {
-  padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.form-container button {
-  padding: 0.6rem;
-  background: #3498db;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.section-post button:hover {
+  opacity: 0.9;
 }
