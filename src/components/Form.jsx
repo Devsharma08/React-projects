@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { postService } from '../services/PostService';
 
-export const Form = ({ data, setData }) => {
-  const [newData, setNewData] = useState({ title: "", body: "" });
+
+
+export const Form = ({ data, setData, updatePost,setUpdateData }) => {
+
+  const [newData, setNewData] = useState({ title:"", body:"" });
   const [error, setError] = useState("");
+
+  useEffect(()=>{
+    console.log("use Effect worked");
+    {updatePost &&
+    setNewData({ title: updatePost.title || "", body:updatePost.body || "" });
+    }},[updatePost])
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +34,6 @@ export const Form = ({ data, setData }) => {
       }
     } catch (err) {
       setError("❌ Posting error: " + err.message);
-      console.error(err.message);
       console.error(err);
     }
   };
